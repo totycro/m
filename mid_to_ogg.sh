@@ -1,5 +1,6 @@
 #!/bin/sh
-TIMIDITY_ARGS="--volume=130" 
+TIMIDITY_ARGS="--volume=120" 
+#TIMIDITY_ARGS=""
 if test $# -gt 0; then
 	echo $@
 	find . -iname "*$@*.mid" | cut -d'/' -f 2 | while read i ; do
