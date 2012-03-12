@@ -7,18 +7,19 @@ j=0
 find . -iname "*$@*.mid" | cut -d'/' -f 2 | while read i ; do
 	echo $i
 	if [ $((j%3)) -eq 2 ] ; then
-		echo 1
+		#echo 1
  		# run one now really
 		timidity $TIMIDITY_ARGS -Aa -Ov "$i" 
 	else
-		echo 2
-		timidity $TIMIDITY_ARGS -Aa -Ov "$i"  &
+		#echo 2
+		# TODO waiting doesn't work yet
+		timidity $TIMIDITY_ARGS -Aa -Ov "$i"  # &
 		LAST_PID=$!
 	fi
 	let j+=1
 done
 
-wait $LAST_PID
+#wait $LAST_PID
 
 
 /home/totycro/bin/dropbox.py start
