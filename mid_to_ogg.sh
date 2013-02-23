@@ -1,12 +1,12 @@
 #!/bin/sh
 
-TIMIDITY_ARGS="--volume=120" 
+TIMIDITY_ARGS="--volume=120"  
 #TIMIDITY_ARGS=""
 j=0
 /home/totycro/bin/dropbox.py stop
 
 D="/tmp/foooobarr"
-mkdir "$D"
+mkdir "$D" 2>/dev/null
 OUT="${D}/fiiifooo_not_rlly"
 # can't pass data out of find | while read subshell, so stupidly use files
 DAT="${D}/dat"
@@ -33,7 +33,7 @@ done
 
 while [ "x$(cat "$DAT" | wc -l)" != "x$(cat "$OUT" | wc -l)" ]; do
 	echo "waiting for tasks.."
-	sleep 5
+	sleep 2
 done
 
 /home/totycro/bin/dropbox.py start
@@ -42,6 +42,6 @@ done
 # name files back, default output converts . to _
 echo "rename.."
 find . -iname "*.ogg" | while read i ; do
-	mv "$i" "`echo $i | tr _ .`" 2>/dev/null
+	mv "$i" "`echo $i | tr _ .`" 2>/dev/null 
 done
 
