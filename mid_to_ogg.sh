@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TIMIDITY_ARGS="--volume=120"  
+TIMIDITY_ARGS="--volume=100"  
 #TIMIDITY_ARGS=""
 j=0
 /home/totycro/bin/dropbox.py stop
