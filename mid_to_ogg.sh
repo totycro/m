@@ -3,7 +3,7 @@
 TIMIDITY_ARGS="--volume=100"  
 #TIMIDITY_ARGS=""
 j=0
-/home/totycro/bin/dropbox.py stop
+#dropbox stop
 
 D="/tmp/foooobarr"
 mkdir "$D" 2>/dev/null
@@ -36,7 +36,7 @@ while [ "x$(cat "$DAT" | wc -l)" != "x$(cat "$OUT" | wc -l)" ]; do
 	sleep 2
 done
 
-/home/totycro/bin/dropbox.py start
+#dropbox start
 
 # STUPID HACK:
 # name files back, default output converts . to _
